@@ -8,17 +8,8 @@ const app = express()
 
 app.use(router)
 
-
 app.use(morgan('short'))
 app.use(express.static('./public'))
-
-function getConnection() {
- return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        database: 'lbta_mysql'
-  })
-}
 
 app.get("/", (request, response) => {
   console.log("Responding to root route");
